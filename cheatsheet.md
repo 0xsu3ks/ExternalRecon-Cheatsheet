@@ -1,0 +1,91 @@
+# Github
+
+By 0xsu3ks && @0xTato
+```
+For BSides Orlando 2022
+Full Metal Recon: From CERTS to CIRT
+```
+
+## Keyword Searching
+| Filter  | Description  |
+|---|---|
+| domain.xxx curl  | Looks for curl usage on target domain  | 
+| domain.xxx wget  | Looks for wget usage on target domain | 
+| domain.xxx chmod  | Looks for chmod usage on target domain  |   
+| domain.xxx kubectl  | Looks for kubectl usage on target domain  |   
+| domain.xxx kubectx  | Looks for kubectx usage on target domain  |   
+| domain.xxx awsp  | Looks for awsp usage on target domain   |   
+| domain.xxx git  | Looks for git usage on target domain  |   
+| domain.xxx gitlab  | Looks for gitlab usage on target domain  |   
+| domain.xxx jfrog  | Looks for jfrog usage on target domain  |   
+| domain.xxx jenkins  | Looks for jenkins usage on target domain  |   
+| domain.xxx artifactory  | Looks for artifactory usage on target domain |   
+| domain.xxx ansible  | Looks for ansible usage on target domain  |   
+| domain.xxx helm  |   | Looks for helm usage on target domain  |
+| domain.xxx nslookup  | Looks for nslookup usage on target domain  |   
+| domain.xxx history  | Looks for history usage on target domain  |   
+| domain.xxx token  | Looks for keyword token usage against target domain  |   
+| domain.xxx secret  |   | Looks for keyword secret usage against target domain  |
+| domain.xxx AWS  | Looks for keyword AWS usage against target domain  |   
+| domain.xxx $Encoded  | Looks for keyword $Encoded usage against target domain  |
+| domain.xxx Basic  | Looks for keyword Basic (auth) against target domain  |
+| domain.xxx "Headers=Headers"  | Looks for scripts containing this variable against target domain  |
+| domain.xxx key  | Looks for keyword key usage against target domain  |
+| domain.xxx base64  | Looks for base64 usage against target domain  |
+
+
+
+## Filetype Searching
+| Filter  | Description  |
+|---|---|
+| domain.xxx extension:docx  | Looks for docx files against target domain   |
+| domain.xxx extension:pdf  | Looks for pdf files against target domain  |
+| domain.xxx extension:zip  | Looks for zip files against target domain  |
+| domain.xxx extension:7z | Looks for 7z files against target domain  |
+| domain.xxx extension:gz  | Looks for gz files against target domain  |
+| domain.xxx extension:tar  | Looks for tar files against target domain  |
+| domain.xxx extension:bak  | Looks for bak files against target domain  |
+| domain.xxx extension:txt  | Looks for txt files against target domain  |
+| domain.xxx extension:ini  | Looks for ini files against target domain  |
+| domain.xxx extension:jar  | Looks for jar files against target domain  |
+| domain.xxx extension:yml  | Looks for yml files against target domain  |
+| domain.xxx extension:config  | Looks for config files against target domain  |
+
+
+## Language Filtering
+| Filter  | Description  |
+|---|---|
+| domain.xxx language:yaml  | Looks for yaml files against target domain   |
+| domain.xxx language:shell  | Looks for shell scripts against target domain   |
+| domain.xxx language:powershell  | Looks for powershell scripts against target domain   |
+| domain.xxx language:json  | Looks for json files against target domain   |
+| domain.xxx language:text  | Looks for text files against target domain   |
+
+
+# Censys
+
+## Certificates
+| Filter  | Description  |
+|---|---|
+|parsed.names:"www.domain.xxx" | Looks for certificates with target domain |
+|parsed.issuer.organization.raw:"Domain XXX" | Looks for certificates issued by target domain |
+
+## Host Discovery 
+
+| Filter  | Description  |
+|---|---|
+|service.http.response.body: "Unique Corporate Font" | Looks for font within HTTP body responses from webservers | 
+|service.http.response.body: "Unique Corporate Tagline" | Looks for specfic keywords within HTTP body responses from webservers |
+|service.http.response.html_title: "Unique Corporate Tagline" | Looks for specfic keywords within HTTP Title responses from webservers |
+|services.banner:"Target Organization" | Looks for keywords within service banners such as SSH and FTP |
+|autonomous_system.asn: "ASN # of Target" | Looks for specifc network ranges owned by target |
+|location.country: "Country of Target" | Looks specifically in locations |
+|services.tls.certificates.leaf_data.issuer.organization: "Target Organization" | Looks for keywords within the certificate issuer organization field |
+|services.tls.certificates.leaf_data.subject.organization: "Target Organization" | Looks for keywords within the certificate subject organization field |
+|services.tls.certificates.leaf_data.subject.organizational_unit: "Organization within Target" | Looks for keywords within the certificate organizational unit field |
+|services.tls.certificates.leaf_data.issuer.common_name: "Target Name" | Looks for keywords within the certificate issuer common name field |
+|services.tls.certificates.leaf_data.subject.common_name: Target | Looks for keywords within the certificate subject common name field | 
+|services.tls.certificates.leaf_data.subject.common_name=".target.com" and services.port:3389 | Looks for target organization in certificate and if port 3389 is exposed |
+|services.software.product: "Nessus" | Looks for specified software product |
+|services.http.response.html_title: "Index of" | Looks for webservers listing directories | 
+|services.tls.certificates.leaf_data.subject.common_name=".target.com" | Looks for anything with target domain and wildcard in subdomain |
